@@ -1,0 +1,43 @@
+@model IEnumerable<ModuleImplementation.Models.Reminder>
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h1 class="card-title mb-0">Reminders</h1>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div style="height: 480px; overflow-y: auto;">
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Title</th>
+                                <th>Date-Time</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Title</td>
+                                    <td>@item.DateTime.ToString("yyyy-MM-dd HH:mm")</td>
+                                    <td>@item.Email</td>
+                                </tr>
+                            }
+                            @if (!Model.Any())
+                            {
+                                <tr>
+                                    <td colspan="3" class="text-center">No reminders found.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <a asp-action="Set" class="btn btn-primary">Set Reminder</a>
+        </div>
+    </div>
+</div>

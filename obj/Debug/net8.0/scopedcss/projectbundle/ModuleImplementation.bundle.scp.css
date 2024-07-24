@@ -1,0 +1,75 @@
+/* _content/ModuleImplementation/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Ensure the navbar-brand wraps and breaks text appropriately */
+a.navbar-brand[b-zpzboaj8nf] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Style links with a consistent color */
+a[b-zpzboaj8nf] {
+  color: #0077cc;
+  text-decoration: none; /* Remove underline by default */
+}
+
+/* Style primary buttons with a contrasting color scheme */
+.btn-primary[b-zpzboaj8nf] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover[b-zpzboaj8nf],
+.btn-primary:focus[b-zpzboaj8nf] {
+  background-color: #1861ac;
+}
+
+/* Style active and hover states for nav-pills */
+.nav-pills .nav-link.active[b-zpzboaj8nf],
+.nav-pills .show > .nav-link[b-zpzboaj8nf] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Add subtle border-top and border-bottom styles */
+.border-top[b-zpzboaj8nf] {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom[b-zpzboaj8nf] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Add a box-shadow to elements for depth */
+.box-shadow[b-zpzboaj8nf] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+/* Style accept-policy button */
+button.accept-policy[b-zpzboaj8nf] {
+  font-size: 1rem;
+  line-height: inherit;
+  /* Add specific styles as needed */
+}
+
+/* Ensure footer sticks to the bottom */
+.footer[b-zpzboaj8nf] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Adjust as needed */
+  background-color: #f8f9fa; /* Light background color */
+  border-top: 1px solid #e5e5e5; /* Add a top border for separation */
+  text-align: center; /* Center align text */
+  padding: 15px 0; /* Padding for content within the footer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-collapse[b-zpzboaj8nf] {
+    justify-content: center; /* Center align navbar items */
+  }
+}

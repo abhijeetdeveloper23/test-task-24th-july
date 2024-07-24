@@ -1,0 +1,42 @@
+@model ModuleImplementation.Models.Department
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h1 class="card-title mb-0">Edit Department</h1>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Name:</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="invalid-feedback"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LogoUrl" class="control-label">Logo URL:</label>
+                    <input asp-for="LogoUrl" class="form-control" />
+                    <span asp-validation-for="LogoUrl" class="invalid-feedback"></span>
+                </div>
+                <div style="margin-top:10px;" class="form-group">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a asp-action="Index" class="btn btn-secondary ml-2">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Custom validation behavior if needed
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const form = event.target;
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    </script>
+}

@@ -1,0 +1,46 @@
+@model ModuleImplementation.Models.Reminder
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h1 class="card-title mb-0">Set Reminder</h1>
+        </div>
+        <div class="card-body">
+            <form asp-action="Set" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label asp-for="Title" class="control-label">Title</label>
+                    <input asp-for="Title" class="form-control" required />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <div class="invalid-feedback">Please enter a valid Title.</div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateTime" class="control-label">Date and Time</label>
+                    <input asp-for="DateTime" type="datetime-local" class="form-control" required />
+                    <span asp-validation-for="DateTime" class="text-danger"></span>
+                    <div class="invalid-feedback">Please select a Date and Time.</div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Recipient Email</label>
+                    <input asp-for="Email" type="email" class="form-control" required />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <div class="invalid-feedback">Please enter a valid Email address.</div>
+                </div>
+                <button type="submit" style="margin-top:10px;" class="btn btn-primary">Set Reminder</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Custom validation behavior to prevent form submission if fields are empty
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const form = event.target;
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    </script>
+}

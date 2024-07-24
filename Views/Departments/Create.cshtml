@@ -1,0 +1,43 @@
+@model ModuleImplementation.Models.Department
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h1 class="card-title mb-0">Create Department</h1>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" method="post" class="needs-validation" novalidate>
+                <div asp-validation-summary="All" class="text-danger"></div> <!-- Validation Summary -->
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Name:</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="invalid-feedback"></span> <!-- Validation Message -->
+                </div>
+                <div class="form-group">
+                    <label asp-for="LogoUrl" class="control-label">Logo URL:</label>
+                    <input asp-for="LogoUrl" class="form-control" />
+                    <span asp-validation-for="LogoUrl" class="invalid-feedback"></span> <!-- Validation Message -->
+                </div>
+                <div style="margin-top:10px;" class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a asp-action="Index" class="btn btn-secondary ml-2">Cancel</a> <!-- Cancel Button -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Custom validation behavior if needed
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const form = event.target;
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    </script>
+}
